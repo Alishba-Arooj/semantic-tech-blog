@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechPulse | Semantic Tech Blog</title>
+    <style>
+        /* Base Reset & Typography */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f1f5f9;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        /* 1. Unique ID Styling (#myHeader) */
+        #myHeader {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #ffffff;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 4px solid #38bdf8;
+        }
+
+        #myHeader h1 {
+            font-size: 32px;
+            color: #38bdf8;
+            margin-bottom: 5px;
+        }
+
+        #myHeader p {
+            color: #94a3b8;
+            font-size: 16px;
+        }
+
+        /* Semantic Navigation */
+        nav {
+            background-color: #1e293b;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #f8fafc;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        /* Layout Grid Container */
+        .page-container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 15px;
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 25px;
+        }
+
+        /* Main Content Container */
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        /* Section & Article Styling (Block-level) */
+        section {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #0f172a;
+            font-size: 22px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+
+        article {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #cbd5e1;
+        }
+
+        article:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        article h3 {
+            color: #0284c7;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        /* Sidebar (<aside>) */
+        aside {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+        }
+
+        aside h3 {
+            color: #0f172a;
+            font-size: 18px;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 6px;
+        }
+
+        .widget-list {
+            list-style-type: none;
+        }
+
+        .widget-list li {
+            margin-bottom: 10px;
+        }
+
+        .widget-list a {
+            color: #0284c7;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .widget-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* 2. Shared Reusable Class (.highlight-note) across <div> and <span> */
+        .highlight-note {
+            background-color: #e0f2fe;
+            color: #0369a1;
+            border-left: 4px solid #0284c7;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* 3. Inline Element Styling inside Paragraphs */
+        .inline-tag {
+            background-color: #fef08a;
+            color: #854d0e;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+            font-size: 13px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        footer p span {
+            color: #38bdf8;
+        }
+
+        /* Responsive Breakpoint */
+        @media (max-width: 768px) {
+            .page-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Unique ID Attribute on Header -->
+    <header id="myHeader">
+        <h1>TechPulse Portal</h1>
+        <p>Insights into Web Architecture, Software Engineering, and AI Development</p>
+    </header>
+
+    <!-- Semantic Navigation Bar -->
+    <nav>
+        <a href="#featured">Featured Posts</a>
+        <a href="#tutorials">Tutorials</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Page Layout Container -->
+    <div class="page-container">
+
+        <!-- Main Content Area -->
+        <main>
+
+            <!-- Thematic Group 1: Featured Posts -->
+            <section id="featured">
+                <h2>Featured Articles</h2>
+
+                <!-- Independent Article 1 -->
+                <article>
+                    <h3>Understanding Semantic HTML5 for SEO</h3>
+                    <p>
+                        Using semantic markup like <span class="inline-tag">&lt;article&gt;</span> and 
+                        <span class="inline-tag">&lt;section&gt;</span> enhances website accessibility for screen readers 
+                        and boosts search engine ranking naturally.
+                    </p>
+                    
+                    <!-- Shared Reusable Class applied on a block-level <div> -->
+                    <div class="highlight-note" style="margin-top: 10px;">
+                        💡 <strong>Pro Tip:</strong> Search engines heavily prioritize clear heading hierarchies (H1 to H6).
+                    </div>
+                </article>
+
+                <!-- Independent Article 2 -->
+                <article>
+                    <h3>CSS Grid vs Flexbox: When to Use Which?</h3>
+                    <p>
+                        Layout structuring in modern web development relies on choosing between 2D grids and 1D flex layouts.
+                        For page-level structural wrappers, <span class="inline-tag">display: grid</span> is ideal, whereas 
+                        components benefit from <span class="inline-tag">display: flex</span>.
+                    </p>
+                </article>
+            </section>
+
+            <!-- Thematic Group 2: Recent Notes & Updates -->
+            <section id="tutorials">
+                <h2>Developer Quick Notes</h2>
+                <p>
+                    Here is a demonstration of <span class="highlight-note">reusable inline span notes</span> placed inside a block-level paragraph. 
+                    Unlike block elements that take full width, inline elements only wrap around their text content.
+                </p>
+            </section>
+
+        </main>
+
+        <!-- Sidebar Widget Area -->
+        <aside>
+            <h3>Sidebar & Announcements</h3>
+            
+            <!-- Shared Reusable Class applied on a block-level <div> widget -->
+            <div class="highlight-note" style="margin-bottom: 15px;">
+                📢 <strong>Event Alert:</strong> Web Tech Lab Task 2 submission is active!
+            </div>
+
+            <h3>Quick Links</h3>
+            <ul class="widget-list">
+                <li><a href="#">W3C HTML Standard Guidelines</a></li>
+                <li><a href="#">MDN Web Docs - Semantic Elements</a></li>
+                <li><a href="#">Google Search Central SEO Guide</a></li>
+            </ul>
+        </aside>
+
+    </div>
+
+    <!-- Footer Element -->
+    <footer>
+        <p>&copy; 2026 <span>TechPulse Portal</span>. Developed for Web Technologies Lab Task 2.</p>
+    </footer>
+
+</body>
+</html>
